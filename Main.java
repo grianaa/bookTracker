@@ -57,7 +57,7 @@ public class Main {
         }
     }
 
-    // Feature 1: Add a new user
+    
     public static void addUser(Connection conn, Scanner scanner) {
         try {
             System.out.print("Enter user's name: ");
@@ -65,7 +65,7 @@ public class Main {
 
             System.out.print("Enter user's age: ");
             int age = scanner.nextInt();
-            scanner.nextLine(); // consume newline
+            scanner.nextLine();
 
             System.out.print("Enter user's gender (m/f): ");
             String gender = scanner.nextLine();
@@ -93,7 +93,7 @@ public class Main {
         try {
             System.out.print("Enter the userID you want to search for: ");
             int userID = scanner.nextInt();
-            scanner.nextLine(); // consume newline
+            scanner.nextLine();
 
             String sql = "SELECT habitID, book, pagesRead, submissionMoment FROM reading_habit WHERE userID = ?";
             PreparedStatement pstmt = conn.prepareStatement(sql);
@@ -130,7 +130,7 @@ public class Main {
         }
     }
 
-    // Feature 3: Change book title
+    
     public static void changeBookTitle(Connection conn, Scanner scanner) {
         try {
             System.out.print("Enter the current book title: ");
@@ -157,12 +157,12 @@ public class Main {
         }
     }
 
-    // Feature 4: Delete a reading habit record
+   
     public static void deleteReadingHabit(Connection conn, Scanner scanner) {
         try {
             System.out.print("Enter the habitID of the record to delete: ");
             int habitID = scanner.nextInt();
-            scanner.nextLine(); // consume newline
+            scanner.nextLine(); 
 
             String sql = "DELETE FROM reading_habit WHERE habitID = ?";
             PreparedStatement pstmt = conn.prepareStatement(sql);
